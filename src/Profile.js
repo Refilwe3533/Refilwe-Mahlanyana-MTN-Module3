@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
-import { Pressable, Dimensions, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, Button } from 'react-native';
+import { Pressable, Dimensions, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity,Button } from 'react-native';
 
-const Dashboard = ({ navigation }) => {
+const Profile = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.screenContainer}>
-            <Text style={styles.baseText}>
-                Dashbaord View
-            </Text>
-
-
-<Pressable
+        <Text style={styles.baseText}>
+            Profile View
+        </Text>
+        <TextInput
+                style={styles.input}
+                placeholder="Username"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+            />
+        
+        <Pressable
                 style={styles.buttonStyle}
-                onPress={() => navigation.navigate('Picture')}>
-                <Text style={styles.buttonTextStyle}>Picture</Text>
+                onPress={() => navigation.navigate('Dashboard')}>
+                <Text style={styles.buttonTextStyle}>Save</Text>
             </Pressable>
-            <Pressable
-                style={styles.buttonStyle}
-                onPress={() => navigation.navigate('Profile')}>
-                <Text style={styles.buttonTextStyle}>Profile</Text>
-            </Pressable>
-        </SafeAreaView>
+    </SafeAreaView>
     );
-};
+  };
 
 const styles = StyleSheet.create({
     input: {
@@ -65,4 +71,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Dashboard;
+export default Profile;

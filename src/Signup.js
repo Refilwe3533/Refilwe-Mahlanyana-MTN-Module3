@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
 import { Pressable, Dimensions, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, Button } from 'react-native';
 
-const Dashboard = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.screenContainer}>
             <Text style={styles.baseText}>
-                Dashbaord View
+                SignUp
             </Text>
-
-
-<Pressable
-                style={styles.buttonStyle}
-                onPress={() => navigation.navigate('Picture')}>
-                <Text style={styles.buttonTextStyle}>Picture</Text>
-            </Pressable>
+            <TextInput
+                style={styles.input}
+                placeholder="Username"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Confirm Password"
+            />
             <Pressable
                 style={styles.buttonStyle}
-                onPress={() => navigation.navigate('Profile')}>
-                <Text style={styles.buttonTextStyle}>Profile</Text>
+                onPress={() => navigation.navigate('Dashboard')}>
+                <Text style={styles.buttonTextStyle}>Sign Up</Text>
+            </Pressable>
+
+            <Pressable
+                style={styles.buttonStyle}
+                onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.buttonTextStyle}>Login</Text>
             </Pressable>
         </SafeAreaView>
+
     );
 };
 
@@ -37,7 +53,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
     },
     screenContainer: {
-        paddingTop: 1,
+        paddingTop: 5,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -48,21 +64,9 @@ const styles = StyleSheet.create({
         width: '75%',
         marginTop: 32,
         borderRadius: 8,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#ff66b3',
-        shadowRadius: 5,
-        shadowOpacity: 0.7,
-        shadowColor: 'rgba(46, 229, 157, 0.5)',
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-    },
-    buttonTextStyle: {
         color: '#fdfdfd',
         fontWeight: '700',
     },
 });
 
-export default Dashboard;
+export default SignUp;
